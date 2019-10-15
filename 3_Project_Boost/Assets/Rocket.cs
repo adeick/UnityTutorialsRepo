@@ -10,6 +10,11 @@ public class Rocket : MonoBehaviour
     [SerializeField] AudioClip engineSound;
     [SerializeField] AudioClip death;
     [SerializeField] AudioClip levelUp;
+
+    [SerializeField] ParticleSystem thrustParticles;
+    [SerializeField] ParticleSystem deathParticles;
+    [SerializeField] ParticleSystem successParticles;
+    
      
     Rigidbody rigidBody;
     AudioSource audioSource;
@@ -34,12 +39,14 @@ State state = State.Alive;
             float rotationThisFrame = forwardThrust * Time.deltaTime;
             if(Input.GetKey(KeyCode.Space)){
                 rigidBody.AddRelativeForce(Vector3.up * rotationThisFrame);
+                thrustParticles.Play();
                 if(!audioSource.isPlaying){
                     audioSource.PlayOneShot(engineSound);
                 }
             }
             else{
                 audioSource.Stop();
+                thrustParticles.Stop();
             }
         }
     }
@@ -68,6 +75,7 @@ State state = State.Alive;
                     print("Finished");
                     state = State.Transcending;
                     audioSource.PlayOneShot(levelUp);
+                    successParticles.Play();
                     Invoke("LoadNextScene", 1f);
                     break;
                 case "Danger":
@@ -75,6 +83,7 @@ State state = State.Alive;
                     state = State.Dead;
                     audioSource.Stop();
                     audioSource.PlayOneShot(death);
+                    deathParticles.Play();
                     Invoke("LoadNextScene", 1f);
                     break;
             }
@@ -88,6 +97,8 @@ State state = State.Alive;
         else if(state == State.Dead){
             SceneManager.LoadScene(0);
         }
+        deathParticles.Stop();
+        successParticles.Stop();
         state = State.Alive;
     }
 }

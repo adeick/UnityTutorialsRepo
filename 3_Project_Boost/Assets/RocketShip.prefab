@@ -258,6 +258,12 @@ MonoBehaviour:
   engineSound: {fileID: 8300000, guid: 55e7daa7a133c21418db6f46a61f6c3e, type: 3}
   death: {fileID: 8300000, guid: 398aad91da020a04aab88262605e4c97, type: 3}
   levelUp: {fileID: 8300000, guid: 738b12788d45df24eb34b04533ed0954, type: 3}
+  thrustParticles: {fileID: 198100719057022332, guid: a3553fd250eb92d4091bebde350c6739,
+    type: 3}
+  deathParticles: {fileID: 198204746014789312, guid: ab79a37535b979f48b6de56e3a0a5cb0,
+    type: 3}
+  successParticles: {fileID: 198631066050499358, guid: 62198a3a5dbb64a4f9e1618929224faa,
+    type: 3}
 --- !u!1 &7045297776896044531
 GameObject:
   m_ObjectHideFlags: 0
