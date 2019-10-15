@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3673491952888852099}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.0600001, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.7, z: 0}
+  m_LocalScale: {x: 0.75, y: 0.5, z: 0.75}
   m_Children: []
   m_Father: {fileID: 7045297776670956771}
   m_RootOrder: 0
@@ -253,8 +253,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5c18bd3f98cc1a4b80460e82146bf03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationalThrust: 100
-  forwardThrust: 1000
+  rotationalThrust: 250
+  forwardThrust: 1600
+  engineSound: {fileID: 8300000, guid: 55e7daa7a133c21418db6f46a61f6c3e, type: 3}
+  death: {fileID: 8300000, guid: 398aad91da020a04aab88262605e4c97, type: 3}
+  levelUp: {fileID: 8300000, guid: 738b12788d45df24eb34b04533ed0954, type: 3}
 --- !u!1 &7045297776896044531
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,7 +285,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7045297776896044531}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.625, y: -1.42, z: 0}
+  m_LocalPosition: {x: -0.5, y: -1, z: 0}
   m_LocalScale: {x: 0.25, y: 1, z: 0.5}
   m_Children: []
   m_Father: {fileID: 7045297776670956771}
@@ -374,8 +377,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7045297777190349888}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.43999994, z: 0}
-  m_LocalScale: {x: 1, y: 2, z: 1}
+  m_LocalPosition: {x: 0, y: -0.28999984, z: 0}
+  m_LocalScale: {x: 0.75, y: 1.5, z: 0.75}
   m_Children: []
   m_Father: {fileID: 7045297776670956771}
   m_RootOrder: 2
@@ -466,7 +469,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7045297777503263768}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.625, y: -1.42, z: 0}
+  m_LocalPosition: {x: 0.5, y: -1, z: 0}
   m_LocalScale: {x: 0.25, y: 1, z: 0.5}
   m_Children: []
   m_Father: {fileID: 7045297776670956771}
