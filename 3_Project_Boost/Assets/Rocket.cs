@@ -5,8 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class Rocket : MonoBehaviour
 {
+    bool collisions = true;
     [SerializeField] float rotationalThrust = 100f;
     [SerializeField] float forwardThrust = 1000f;
+    [SerializeField] float levelLoadDelay = 2f;
+
     [SerializeField] AudioClip engineSound;
     [SerializeField] AudioClip death;
     [SerializeField] AudioClip levelUp;
@@ -33,6 +36,18 @@ State state = State.Alive;
     {
         Thrust();
         Rotate();
+        if(Debug.isDebugBuild){
+            DebugKeys();
+        }
+    }
+    void DebugKeys(){
+        if (Input.GetKeyDown(KeyCode.L)){
+            state = State.Transcending;
+            LoadNextScene();
+        }
+        else if (Input.GetKeyDown(KeyCode.C)) {
+            collisions = !collisions;
+        }
     }
     void Thrust(){
         if(state == State.Alive){
@@ -76,15 +91,17 @@ State state = State.Alive;
                     state = State.Transcending;
                     audioSource.PlayOneShot(levelUp);
                     successParticles.Play();
-                    Invoke("LoadNextScene", 1f);
+                    Invoke("LoadNextScene", levelLoadDelay);
                     break;
                 case "Danger":
-                    print("Dead");
-                    state = State.Dead;
-                    audioSource.Stop();
-                    audioSource.PlayOneShot(death);
-                    deathParticles.Play();
-                    Invoke("LoadNextScene", 1f);
+                    if(collisions){
+                        print("Dead");
+                        state = State.Dead;
+                        audioSource.Stop();
+                        audioSource.PlayOneShot(death);
+                        deathParticles.Play();
+                        Invoke("LoadNextScene", levelLoadDelay);
+                    }
                     break;
             }
         }

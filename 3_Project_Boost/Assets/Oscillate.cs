@@ -21,7 +21,7 @@ Vector3 startingPos;
     // Update is called once per frame
     void Update()
     {
-        if(period != 0){
+        if(period > Mathf.Epsilon){
             float cycles = Time.time / period;
 
             const float tau = Mathf.PI * 2f;
