@@ -5,14 +5,15 @@ using UnityStandardAssets.CrossPlatformInput;
 
 public class Player : MonoBehaviour
 {
-    [Tooltip("In ms^-1")][SerializeField] float speed = 20f;
-
-    [Tooltip("In ms^-1")][SerializeField] float xSpeed = 4f;
-    [Tooltip("In ms^-1")][SerializeField] float xRange = 5f;
-    [Tooltip("In ms^-1")][SerializeField] float ySpeed = 4f;
-    [Tooltip("In ms^-1")][SerializeField] float yRange = 5f;
+    [Tooltip("In ms^-1")][SerializeField] float speed = 30f;
+    [Tooltip("In ms^-1")][SerializeField] float xRange = 2.5f;
+    [Tooltip("In ms^-1")][SerializeField] float yRange = 1.5f;
     [SerializeField] float positionPitchFactor = -5f;
+    [SerializeField] float controlPitchFactor = -5f;
     [SerializeField] float positionYawFactor = -5f;
+    [SerializeField] float controlRollFactor = -10f;
+
+    float xThrow, yThrow;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,11 +28,11 @@ public class Player : MonoBehaviour
 
     }
     void TranslationMovement(){
-        float xThrow = CrossPlatformInputManager.GetAxis("Horizontal");
-        float yThrow = CrossPlatformInputManager.GetAxis("Vertical");
+        xThrow = CrossPlatformInputManager.GetAxis("Horizontal");
+        yThrow = CrossPlatformInputManager.GetAxis("Vertical");
 
-        float xOffset = xThrow * xSpeed * Time.deltaTime;
-        float yOffset = yThrow * ySpeed * Time.deltaTime;
+        float xOffset = xThrow * speed * Time.deltaTime;
+        float yOffset = yThrow * speed * Time.deltaTime;
 
         float rawNewXPos = transform.localPosition.x + xOffset;
         float rawNewYPos = transform.localPosition.y + yOffset;
@@ -43,11 +44,25 @@ public class Player : MonoBehaviour
     }
 
     void RotationalMovement(){
+        float pitch, yaw, roll;
+        float controlPitch;
 
-        float pitch = transform.localPosition.y * positionPitchFactor;
+        float pitchDueToPosition = transform.localPosition.y * positionPitchFactor ;
+        yaw = transform.localPosition.x * positionYawFactor;
 
-        float yaw = transform.localPosition.x * positionYawFactor;
-        float roll = 0f;
+        if(xRange - Mathf.Abs(transform.localPosition.x) < 0.1){
+            roll = 0;
+        }
+        else{
+            roll = xThrow * controlRollFactor;
+        }
+        if(yRange - Mathf.Abs(transform.localPosition.y) < 0.1){
+            controlPitch = 0;
+        }
+        else{
+            controlPitch = yThrow * controlPitchFactor;
+        }
+        pitch = pitchDueToPosition + controlPitch;
 
         transform.localRotation = Quaternion.Euler(pitch, yaw, roll);
     }

@@ -38,13 +38,13 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.7302384, g: 0.7889801, b: 0.84985816, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 1
+  m_GIWorkflowMode: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -5070,12 +5070,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
-  xSpeed: 30
-  xRange: 2.5
-  ySpeed: 30
-  yRange: 1.5
+  xRange: 5
+  yRange: 4.5
   positionPitchFactor: -5
-  positionYawFactor: -5
+  controlPitchFactor: -25
+  positionYawFactor: 6
+  controlRollFactor: -25
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -5128,7 +5128,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 100
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -5174,10 +5174,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   circuit: {fileID: 406974738}
-  lookAheadForTargetOffset: 5
-  lookAheadForTargetFactor: 0.1
-  lookAheadForSpeedOffset: 10
-  lookAheadForSpeedFactor: 0.2
+  lookAheadForTargetOffset: 3
+  lookAheadForTargetFactor: 0
+  lookAheadForSpeedOffset: 1
+  lookAheadForSpeedFactor: 0
   progressStyle: 0
   pointToPointThreshold: 4
   target: {fileID: 963194228}
@@ -5500,7 +5500,7 @@ PrefabInstance:
     - target: {fileID: 2426039732497950761, guid: becbbf3ea41435a418548c62889f25d1,
         type: 3}
       propertyPath: InitialModule.startSpeed.scalar
-      value: 1000
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 2426039732497950761, guid: becbbf3ea41435a418548c62889f25d1,
         type: 3}
