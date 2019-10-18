@@ -5,9 +5,12 @@ using UnityStandardAssets.CrossPlatformInput;
 
 public class Player : MonoBehaviour
 {
-    [Tooltip("In ms^-1")][SerializeField] float xSpeed = 4f;
-    [Tooltip("In ms^-1")][SerializeField] float ySpeed = 4f;
+    [Tooltip("In ms^-1")][SerializeField] float speed = 20f;
 
+    [Tooltip("In ms^-1")][SerializeField] float xSpeed = 4f;
+    [Tooltip("In ms^-1")][SerializeField] float xRange = 5f;
+    [Tooltip("In ms^-1")][SerializeField] float ySpeed = 4f;
+    [Tooltip("In ms^-1")][SerializeField] float yRange = 5f;
     [SerializeField] float positionPitchFactor = -5f;
     [SerializeField] float positionYawFactor = -5f;
     // Start is called before the first frame update
@@ -33,8 +36,8 @@ public class Player : MonoBehaviour
         float rawNewXPos = transform.localPosition.x + xOffset;
         float rawNewYPos = transform.localPosition.y + yOffset;
 
-        rawNewXPos = Mathf.Clamp(rawNewXPos, -2.2f, 2.2f);
-        rawNewYPos = Mathf.Clamp(rawNewYPos, -1.5f, 1.5f);
+        rawNewXPos = Mathf.Clamp(rawNewXPos, -xRange, xRange);
+        rawNewYPos = Mathf.Clamp(rawNewYPos, -yRange, yRange);
 
         transform.localPosition = new Vector3(rawNewXPos, rawNewYPos, transform.localPosition.z);
     }
@@ -43,7 +46,7 @@ public class Player : MonoBehaviour
 
         float pitch = transform.localPosition.y * positionPitchFactor;
 
-        float yaw = transform.localPosition.x * positionYawFactor;;
+        float yaw = transform.localPosition.x * positionYawFactor;
         float roll = 0f;
 
         transform.localRotation = Quaternion.Euler(pitch, yaw, roll);
