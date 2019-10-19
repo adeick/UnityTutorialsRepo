@@ -3,29 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
-public class Player : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
-    [Tooltip("In ms^-1")][SerializeField] float speed = 30f;
-    [Tooltip("In ms^-1")][SerializeField] float xRange = 2.5f;
-    [Tooltip("In ms^-1")][SerializeField] float yRange = 1.5f;
+    [Header("General")]
+    [Tooltip("In ms^-1")][SerializeField] float speed = 20f;
+    [Tooltip("In ms^-1")][SerializeField] float xRange = 10f;
+    [Tooltip("In ms^-1")][SerializeField] float yRange = 9f;
     [SerializeField] float positionPitchFactor = -5f;
-    [SerializeField] float controlPitchFactor = -5f;
-    [SerializeField] float positionYawFactor = -5f;
-    [SerializeField] float controlRollFactor = -10f;
+    [SerializeField] float controlPitchFactor = -25f;
+    [SerializeField] float positionYawFactor = 6f;
+    [SerializeField] float controlRollFactor = -25f;
 
     float xThrow, yThrow;
     // Start is called before the first frame update
+    bool dead;
     void Start()
     {
-        
+        dead = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        TranslationMovement();
-        RotationalMovement();
-
+        if(!dead){
+            TranslationMovement();
+            RotationalMovement();
+        }
     }
     void TranslationMovement(){
         xThrow = CrossPlatformInputManager.GetAxis("Horizontal");
@@ -51,13 +54,13 @@ public class Player : MonoBehaviour
         yaw = transform.localPosition.x * positionYawFactor;
 
         if(xRange - Mathf.Abs(transform.localPosition.x) < 0.1){
-            roll = 0;
+            roll = controlRollFactor * (xRange - Mathf.Abs(transform.localPosition.x));
         }
         else{
             roll = xThrow * controlRollFactor;
         }
         if(yRange - Mathf.Abs(transform.localPosition.y) < 0.1){
-            controlPitch = 0;
+            controlPitch = controlPitchFactor * (yRange - Mathf.Abs(transform.localPosition.y));
         }
         else{
             controlPitch = yThrow * controlPitchFactor;
@@ -65,5 +68,9 @@ public class Player : MonoBehaviour
         pitch = pitchDueToPosition + controlPitch;
 
         transform.localRotation = Quaternion.Euler(pitch, yaw, roll);
+    }
+    void Explosion(){
+        dead = true;
+        print("Boom");
     }
 }
