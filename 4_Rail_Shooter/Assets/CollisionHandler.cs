@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class CollisionHandler : MonoBehaviour
 {
     [Tooltip("Explosion Particle Effect")][SerializeField] GameObject explosionFX; 
-    [SerializeField] int levelLoadDelay = 1;
+    [SerializeField] float levelLoadDelay = 0.5f;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +26,6 @@ public class CollisionHandler : MonoBehaviour
     }
 
     void LevelRestart(){
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 }
