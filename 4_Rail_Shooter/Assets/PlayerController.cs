@@ -69,7 +69,7 @@ public class PlayerController : MonoBehaviour
 
         transform.localRotation = Quaternion.Euler(pitch, yaw, roll);
     }
-    void Explosion(){
+    void PlayerDeath(){
         dead = true;
         print("Boom");
     }

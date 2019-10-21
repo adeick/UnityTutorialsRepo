@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CollisionHandler : MonoBehaviour
 {
+    [Tooltip("Explosion Particle Effect")][SerializeField] GameObject explosionFX; 
+    [SerializeField] int levelLoadDelay = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,8 +20,12 @@ public class CollisionHandler : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider other){
-        print("Dead1");
-        SendMessage("Explosion");
-        print("Dead");
+        SendMessage("PlayerDeath");
+        explosionFX.SetActive(true);
+        Invoke("LevelRestart", levelLoadDelay);
+    }
+
+    void LevelRestart(){
+        SceneManager.LoadScene(0);
     }
 }
