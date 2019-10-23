@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour
         
     }
     void OnParticleCollision(GameObject other){
-        explosionFX.SetActive(true);
+        Instantiate(explosionFX, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }
