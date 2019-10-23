@@ -314,6 +314,7 @@ GameObject:
   - component: {fileID: 173059677}
   - component: {fileID: 173059679}
   - component: {fileID: 173059678}
+  - component: {fileID: 173059680}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -380,6 +381,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 173059676}
   m_CullTransparentMesh: 0
+--- !u!114 &173059680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173059676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52c20d7054430a143ba2966eaacb5abb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &215147866 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1528543463319893505, guid: 023ddc6ae34db9540b400c443cf38282,
@@ -406,6 +419,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionFX: {fileID: 2231582408395492109, guid: 40b8420081b25904c8bbbcc8920fd861,
     type: 3}
+  killPoints: 12
 --- !u!1 &413432997
 GameObject:
   m_ObjectHideFlags: 0
@@ -591,6 +605,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionFX: {fileID: 2231582408395492109, guid: 40b8420081b25904c8bbbcc8920fd861,
     type: 3}
+  killPoints: 12
 --- !u!1001 &466649863
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -983,6 +998,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionFX: {fileID: 2231582408395492109, guid: 40b8420081b25904c8bbbcc8920fd861,
     type: 3}
+  killPoints: 200
 --- !u!1 &938873335 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1000013772491214, guid: 192b7fe2500f5e0449f21c651bc0474c,
@@ -1335,6 +1351,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionFX: {fileID: 2231582408395492109, guid: 40b8420081b25904c8bbbcc8920fd861,
     type: 3}
+  killPoints: 12
 --- !u!1 &1138586502
 GameObject:
   m_ObjectHideFlags: 0
@@ -1617,6 +1634,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionFX: {fileID: 2231582408395492109, guid: 40b8420081b25904c8bbbcc8920fd861,
     type: 3}
+  killPoints: 200
 --- !u!1001 &1919559983
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1706,6 +1724,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionFX: {fileID: 2231582408395492109, guid: 40b8420081b25904c8bbbcc8920fd861,
     type: 3}
+  killPoints: 12
 --- !u!4 &4354848185580190 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4195084079281240862, guid: 650c4627017a0fa4d9b39ee72198c61b,
