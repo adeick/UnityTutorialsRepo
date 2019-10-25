@@ -25,5 +25,4 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);
         scoreBoard.ScoreHit(killPoints);
     }
-    //VersionControl DeadEnd
 }
