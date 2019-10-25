@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
         if(!dead){
             TranslationMovement();
             RotationalMovement();
+            Firing();
         }
     }
     void TranslationMovement(){
@@ -68,6 +69,11 @@ public class PlayerController : MonoBehaviour
         pitch = pitchDueToPosition + controlPitch;
 
         transform.localRotation = Quaternion.Euler(pitch, yaw, roll);
+    }
+    void Firing(){
+        if(CrossPlatformInputManager.GetButton("Fire")){
+            print("fire");
+        }
     }
     void PlayerDeath(){
         dead = true;
