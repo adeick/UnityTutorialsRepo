@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float controlPitchFactor = -25f;
     [SerializeField] float positionYawFactor = 6f;
     [SerializeField] float controlRollFactor = -25f;
+    [SerializeField] GameObject[] guns;
 
     float xThrow, yThrow;
     // Start is called before the first frame update
@@ -71,8 +72,21 @@ public class PlayerController : MonoBehaviour
         transform.localRotation = Quaternion.Euler(pitch, yaw, roll);
     }
     void Firing(){
-        if(CrossPlatformInputManager.GetButton("Fire")){
-            print("fire");
+        if(CrossPlatformInputManager.GetButtonDown("Fire")){
+            foreach(GameObject gun in guns){
+                gun.SetActive(true);
+            }
+            /*foreach(ParticleSystem gun in guns){
+                gun.Play(true);
+            }*/
+        }
+        else{
+            foreach(GameObject gun in guns){
+                gun.SetActive(false);
+            }
+            /*foreach(ParticleSystem gun in guns){
+                gun.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+            }*/
         }
     }
     void PlayerDeath(){

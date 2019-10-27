@@ -681,6 +681,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 873662903}
   m_PrefabAsset: {fileID: 0}
+--- !u!198 &594080778 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2426039732497950761, guid: becbbf3ea41435a418548c62889f25d1,
+    type: 3}
+  m_PrefabInstance: {fileID: 873662903}
+  m_PrefabAsset: {fileID: 0}
 --- !u!65 &594080779
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -970,6 +976,26 @@ PrefabInstance:
       propertyPath: CollisionModule.minKillSpeed
       value: 1000
       objectReference: {fileID: 0}
+    - target: {fileID: 2426039732497950761, guid: becbbf3ea41435a418548c62889f25d1,
+        type: 3}
+      propertyPath: TrailModule.dieWithParticles
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2426039732497950761, guid: becbbf3ea41435a418548c62889f25d1,
+        type: 3}
+      propertyPath: looping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2426039732497950761, guid: becbbf3ea41435a418548c62889f25d1,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2426039732497950761, guid: becbbf3ea41435a418548c62889f25d1,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: becbbf3ea41435a418548c62889f25d1, type: 3}
 --- !u!1 &937513807 stripped
@@ -1067,6 +1093,9 @@ MonoBehaviour:
   controlPitchFactor: -25
   positionYawFactor: 6
   controlRollFactor: -25
+  guns:
+  - {fileID: 594080778}
+  - {fileID: 1753323824}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1460,6 +1489,12 @@ Transform:
 --- !u!1 &1753323821 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2426039732497950762, guid: becbbf3ea41435a418548c62889f25d1,
+    type: 3}
+  m_PrefabInstance: {fileID: 2426039731468032238}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1753323824 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2426039732497950761, guid: becbbf3ea41435a418548c62889f25d1,
     type: 3}
   m_PrefabInstance: {fileID: 2426039731468032238}
   m_PrefabAsset: {fileID: 0}
@@ -1891,6 +1926,21 @@ PrefabInstance:
         type: 3}
       propertyPath: CollisionModule.minKillSpeed
       value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2426039732497950761, guid: becbbf3ea41435a418548c62889f25d1,
+        type: 3}
+      propertyPath: TrailModule.dieWithParticles
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2426039732497950761, guid: becbbf3ea41435a418548c62889f25d1,
+        type: 3}
+      propertyPath: looping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2426039732497950761, guid: becbbf3ea41435a418548c62889f25d1,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: becbbf3ea41435a418548c62889f25d1, type: 3}
