@@ -1765,6 +1765,44 @@ MonoBehaviour:
   explosionFX: {fileID: 2231582408395492109, guid: 40b8420081b25904c8bbbcc8920fd861,
     type: 3}
   killPoints: 12
+--- !u!95 &1238096104470322
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1238096104470318}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!320 &1238096104470323
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1238096104470318}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: ee57a4557ca6cb148825d3fcbd18ed47, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: -4052766846059360122, guid: ee57a4557ca6cb148825d3fcbd18ed47, type: 2}
+    value: {fileID: 1238096104470322}
+  m_ExposedReferences:
+    m_References: []
 --- !u!4 &4354848185580190 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4195084079281240862, guid: 650c4627017a0fa4d9b39ee72198c61b,
