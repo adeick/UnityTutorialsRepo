@@ -72,23 +72,23 @@ public class PlayerController : MonoBehaviour
         transform.localRotation = Quaternion.Euler(pitch, yaw, roll);
     }
     void Firing(){
-        if(CrossPlatformInputManager.GetButton("Fire")){
+        if(CrossPlatformInputManager.GetButtonDown("Fire")){
             /*foreach(GameObject gun in guns){
                 gun.SetActive(true);
             }// */
             foreach(ParticleSystem gun in guns){
                 gun.Play(true);
             }//*/
-            print("shoot");
+            //print("shoot");
         }
-        else { //if(CrossPlatformInputManager.GetButton("Fire")){
+        else if(CrossPlatformInputManager.GetButtonUp("Fire")){
             /*foreach(GameObject gun in guns){
                 gun.SetActive(false);
             }//*/
             foreach(ParticleSystem gun in guns){
                 gun.Stop(true, ParticleSystemStopBehavior.StopEmitting);
             }// */
-            print("peace");
+            //print("peace");
         }
     }
     void PlayerDeath(){
