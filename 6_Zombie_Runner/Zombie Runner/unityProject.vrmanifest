@@ -1,0 +1,16 @@
+{
+  "source": "Unity",
+  "applications": [
+    {
+      "app_key": "application.generated.unity.zombierunner.exe",
+      "launch_type": "url",
+      "url": "steam://launch/",
+      "action_manifest_path": "C:\\Users\\Student\\Documents\\Andrew Unity\\Unity-GitHub-Repo\\6_Zombie_Runner\\Zombie Runner\\actions.json",
+      "strings": {
+        "en_us": {
+          "name": "Zombie Runner [Testing]"
+        }
+      }
+    }
+  ]
+}
