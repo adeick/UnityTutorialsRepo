@@ -109,7 +109,7 @@ State state = State.Alive;
 
     void LoadNextScene(){
         if(state == State.Transcending){
-            SceneManager.LoadScene((SceneManager.GetActiveScene().buildIndex + 1) % 4);
+            SceneManager.LoadScene((SceneManager.GetActiveScene().buildIndex + 1) % 6);
         }
         else if(state == State.Dead){
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
