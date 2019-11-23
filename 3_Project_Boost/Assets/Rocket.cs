@@ -112,7 +112,7 @@ State state = State.Alive;
             SceneManager.LoadScene((SceneManager.GetActiveScene().buildIndex + 1) % 4);
         }
         else if(state == State.Dead){
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
         deathParticles.Stop();
         successParticles.Stop();
